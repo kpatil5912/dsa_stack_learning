@@ -2,8 +2,13 @@ package org.example.assignmet6;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Stack;
 
 public class StackExamples {
+    public StackExamples() {
+    }
+
+    // LeetCode : 1046
     public int lastStoneWeight(int[] stones) {
         PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
 
@@ -23,11 +28,8 @@ public class StackExamples {
         }
         return queue.isEmpty() ? 0 : queue.peek();
 
-
-
-
-
-
-
     }
+
+
+
 }

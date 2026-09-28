@@ -1,37 +1,63 @@
 package org.example;
 
+import org.example.assignmet6.StackExamples;
+
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Stack;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+
+        StackExamples st = new StackExamples();
         int[] stones =  {2,7,4,1,8,1};
-        System.out.println(lastStoneWeight(stones));
+        System.out.println(st.lastStoneWeight(stones));
+
+        MyQueue obj = new MyQueue();
+            obj.push(10);
+            obj.push(20);
+            obj.push(30);
+            int param_2 = obj.pop();
+            int param_3 = obj.peek();
+            boolean param_4 = obj.empty();
     }
 
 
-    public static  int lastStoneWeight(int[] stones) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+    // Leetcode : 232
+    private static class MyQueue {
+        Stack<Integer> st1 = new Stack<Integer>();
+        Stack<Integer> st2 = new Stack<Integer>();
 
-        for(int num : stones){
-            queue.add(num);
+        public MyQueue() {
+
         }
 
-        while(queue.size() > 1){
-            int x = queue.poll();
-            int y = queue.poll();
+        public void push(int x) {
+            st1.push(x);
+        }
 
-            if(x != y){
-                int diff = x - y;
-                queue.add(diff);
+        public int pop() {
+            if (st2.isEmpty()) {
+                while (!st1.isEmpty()) {
+                    st2.push(st1.pop());
+                }
             }
 
+            return st2.pop();
         }
-        return queue.isEmpty() ? 0 : queue.peek();
 
+        public int peek() {
+            if(st2.isEmpty()){
+                while(!st1.isEmpty()){
+                    st2.push(st1.pop());
+                }
+            }
+            return st2.peek();
+        }
+
+        public boolean empty() {
+            return st1.isEmpty() && st2.isEmpty();
+        }
     }
 }
