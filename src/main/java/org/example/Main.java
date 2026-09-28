@@ -14,13 +14,18 @@ public class Main {
         int[] stones =  {2,7,4,1,8,1};
         System.out.println(st.lastStoneWeight(stones));
 
-        MyQueue obj = new MyQueue();
+        int[] tickets  =  {2,3,2};
+        System.out.println(st.timeRequiredToBuy(tickets, 2));
+
+
+
+      /*  MyQueue obj = new MyQueue();
             obj.push(10);
             obj.push(20);
             obj.push(30);
             int param_2 = obj.pop();
             int param_3 = obj.peek();
-            boolean param_4 = obj.empty();
+            boolean param_4 = obj.empty();*/
     }
 
 
