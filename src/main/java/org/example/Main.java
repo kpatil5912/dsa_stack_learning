@@ -11,13 +11,22 @@ public class Main {
     public static void main(String[] args) {
 
         StackExamples st = new StackExamples();
+
+        // LeetCode : 1046 Last stone weight
         int[] stones =  {2,7,4,1,8,1};
         System.out.println(st.lastStoneWeight(stones));
 
+        // Leetcode 2073. Time Needed to Buy Tickets
         int[] tickets  =  {2,3,2};
         System.out.println(st.timeRequiredToBuy(tickets, 2));
 
+        //Leetcode 84. Largest Rectangle in Histogram
+        int[] heights  =  {2,1,5,6,2,3};
+        System.out.println(st.largestRectangleArea(heights));
 
+        //Leetcode 530. Minimum Absolute Difference in BST
+        //TreeNode root = [4,2,6,1,3];
+       // System.out.println(st.getMinimumDifference(root));
 
       /*  MyQueue obj = new MyQueue();
             obj.push(10);
